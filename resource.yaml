@@ -1,0 +1,18 @@
+apiVersion: delivery.ocm.software/v1alpha1
+kind: Resource
+metadata:
+  name: green
+  namespace: ocm-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: ComponentVersion
+    name: component-version-green
+    namespace: ocm-system
+    resourceRef:
+      name: green
+      version: 1.0.0
+      extraIdentity:
+        helmChart: green
+#      referencePath:
+#        - name: continuum-system

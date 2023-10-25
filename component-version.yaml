@@ -1,0 +1,17 @@
+apiVersion: delivery.ocm.software/v1alpha1
+kind: ComponentVersion
+metadata:
+  name: component-version-green
+  namespace: ocm-system
+spec:
+  interval: 1m
+  component: github.com/shivenduverma-sap/ias-gitops-green
+  references:
+    expand: true
+  version:
+    semver: 1.0.0
+  repository:
+    url: 'https://d072443.common.repositories.cloud.sap' #
+#    secretRef:
+#      name: registry-creds
+  serviceAccountName: registry-sa

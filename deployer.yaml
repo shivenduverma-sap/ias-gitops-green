@@ -1,0 +1,18 @@
+apiVersion: delivery.ocm.software/v1alpha1
+kind: FluxDeployer
+metadata:
+  name: green
+  namespace: ocm-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: Resource
+    name: green
+    namespace: ocm-system
+  helmReleaseTemplate:
+    chart:
+      spec:
+        chart: green
+        version: 1.0.0
+        interval: 1s
+    interval: 1s
